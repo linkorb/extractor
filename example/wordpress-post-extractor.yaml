@@ -1,0 +1,44 @@
+---
+name: wordpress-post-extractor
+description: Extracts a post and related data by name
+
+inputs:
+  postName:
+    type: string
+    required: true
+
+commands:
+  posts:
+    method: query
+    command: |
+      SELECT
+        ID,
+        post_title,
+        post_name,
+        post_date,
+        post_status
+      FROM wp_posts
+      WHERE
+        post_type='post'
+      AND
+        post_name=:postName
+    arguments:
+      postName: "inputs[0]['postName']"
+
+  comments:
+    method: query
+    command: |
+      SELECT
+        comment_ID,
+        comment_author,
+        comment_author_email,
+        comment_date,
+        comment_content
+      FROM wp_comments
+      WHERE
+        comment_post_ID=:postId
+      AND
+        comment_approved=1
+    arguments:
+      postId: "posts[0]['ID']"
+
