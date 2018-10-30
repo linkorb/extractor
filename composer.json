@@ -1,0 +1,27 @@
+{
+  "name": "linkorb/extractor",
+  "description": "Extractor: extracts contexts through query packs",
+  "homepage": "https://github.com/linkorb/extractor",
+  "keywords": ["extractor", "context", "linkorb"],
+  "type": "library",
+  "authors": [
+    {
+      "name": "LinkORB Engineering",
+      "email": "engineering@linkorb.com",
+      "role": "Development"
+    }
+  ],
+  "require": {
+    "linkorb/boost": "^1.0",
+    "symfony/expression-language": "^4.0"
+  },
+  "require-dev": {
+    "symfony/yaml": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Extractor\\": "src/"
+    }
+  },
+  "license": "MIT"
+}
