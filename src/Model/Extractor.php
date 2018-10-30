@@ -37,10 +37,7 @@ class Extractor extends AbstractModel
         $expressionLanguage = new ExpressionLanguage();
 
         foreach ($this->commands as $name => $command) {
-            $connectionName = $command->getConnectionName() ?? null;
-            if (!$connectionName) {
-                throw new RuntimeException("No connection specified for command " . $name);
-            }
+            $connectionName = $command->getConnectionName() ?? 'default';
             if (!isset($this->connections[$connectionName])) {
                 throw new RuntimeException("Unknown connection specified for command " . $name . ' (' . $connectionName . ')');
             }
