@@ -14,7 +14,7 @@ class ExtractorLoader
         $e->setName($config['name'] ?? null);
         $e->setDescription($config['description'] ?? null);
 
-        foreach ($config['inputs'] as $name=>$details) {
+        foreach ($config['inputs'] ?? [] as $name=>$details) {
             $i = new InputDefinition();
             $i->setName($name);
             $i->setType($details['type'] ?? null);
@@ -22,7 +22,7 @@ class ExtractorLoader
             $e->addInputDefinition($i);
         }
 
-        foreach ($config['commands'] as $name=>$details) {
+        foreach ($config['commands'] ?? [] as $name=>$details) {
             $command = new Command();
             $command->setName($name);
             $command->setConnectionName($details['connection'] ?? null);
