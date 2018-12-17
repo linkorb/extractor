@@ -23,7 +23,7 @@ commands:
       AND
         post_name=:postName
     arguments:
-      postName: "inputs[0]['postName']"
+      postName: "//inputs[1]/@postName"
 
   comments:
     method: query
@@ -39,6 +39,7 @@ commands:
         comment_post_ID=:postId
       AND
         comment_approved=1
+      LIMIT 3
     arguments:
-      postId: "posts[0]['ID']"
+      postId: "//posts[1]/@ID"
 

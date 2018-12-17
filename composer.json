@@ -12,8 +12,7 @@
     }
   ],
   "require": {
-    "linkorb/boost": "^1.0",
-    "symfony/expression-language": "^4.0"
+    "linkorb/boost": "^1.0"
   },
   "require-dev": {
     "symfony/yaml": "^4.0"
