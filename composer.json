@@ -15,7 +15,8 @@
     "linkorb/boost": "^1.0"
   },
   "require-dev": {
-    "symfony/yaml": "^4.0"
+    "symfony/yaml": "^4.0",
+    "phpunit/phpunit": "^9.6"
   },
   "autoload": {
     "psr-4": {
